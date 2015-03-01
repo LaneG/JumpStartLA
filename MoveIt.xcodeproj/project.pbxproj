@@ -27,7 +27,6 @@
 		D1A79AF41AA2847900DEFBB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A79AF21AA2847900DEFBB3 /* LaunchScreen.xib */; };
 		D1A79B001AA2847900DEFBB3 /* MoveItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A79AFF1AA2847900DEFBB3 /* MoveItTests.m */; };
 		D1BB38ED1AA304F0009548AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BB38EC1AA304F0009548AC /* HealthKit.framework */; };
-		D1C619B41AA2A48000FF556F /* AAPLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +71,6 @@
 		D1A79AFF1AA2847900DEFBB3 /* MoveItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveItTests.m; sourceTree = "<group>"; };
 		D1BB38EC1AA304F0009548AC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MoveIt.entitlements; sourceTree = "<group>"; };
-		D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLProfileViewController.h; sourceTree = "<group>"; };
-		D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,7 +339,6 @@
 			files = (
 				D13E4F8D1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.m in Sources */,
 				D1A79AE61AA2847900DEFBB3 /* AppDelegate.m in Sources */,
-				D1C619B41AA2A48000FF556F /* AAPLProfileViewController.m in Sources */,
 				D1A79AE31AA2847900DEFBB3 /* main.m in Sources */,
 				D1A79AEC1AA2847900DEFBB3 /* ViewController.m in Sources */,
 				D1A79AE91AA2847900DEFBB3 /* MoveIt.xcdatamodeld in Sources */,

@@ -14,5 +14,6 @@
 
 // Fetches the single most recent quantity of the specified type.
 - (void)aapl_mostRecentQuantitySampleOfType:(HKQuantityType *)quantityType predicate:(NSPredicate *)predicate completion:(void (^)(HKQuantity *mostRecentQuantity, NSError *error))completion;
+- (void)appl_getStepCountForPast24HoursWithCompletion:(void (^)(NSArray *, NSError *))completion;
 
 @end
