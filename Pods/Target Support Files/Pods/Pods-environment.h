@@ -48,3 +48,9 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// MDRadialProgress
+#define COCOAPODS_POD_AVAILABLE_MDRadialProgress
+#define COCOAPODS_VERSION_MAJOR_MDRadialProgress 1
+#define COCOAPODS_VERSION_MINOR_MDRadialProgress 3
+#define COCOAPODS_VERSION_PATCH_MDRadialProgress 1
+

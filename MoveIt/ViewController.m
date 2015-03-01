@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "MDRadialProgressView.h"
+#import "MDRadialProgressTheme.h"
+#import "MDRadialProgressLabel.h"
 
 @interface ViewController ()
 
@@ -54,6 +57,47 @@ bool allowsAlert;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    CGRect frame = self.view.bounds;
+    frame.size.height = frame.size.height / 3;
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height, frame.size.width, frame.size.height)];
+    view2.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:view2];
+    
+    // self.view.backgroundColor = [UIColor whiteColor];
+    
+    int x = self.view.center.x;
+    int y = 20;
+    
+    //	Example 6 ========================================================================
+    CGRect labelFrame = CGRectMake(x, y, frame.size.width, 40);
+    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
+    label.text = @"Start from slice 3, custom label color with no shadow: ";
+    [view2 addSubview:label];
+    
+    frame = CGRectMake(x, y, 100, 100);
+    MDRadialProgressView *radialView5 = [self progressViewWithFrame:frame];
+    
+    radialView5.progressTotal = 20; // total number of segments to break wheel into
+    radialView5.progressCounter = 14; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
+    radialView5.startingSlice = 1;
+    radialView5.theme.sliceDividerHidden = NO;
+    radialView5.theme.sliceDividerThickness = 1;
+    
+    // theme update works both changing the theme or the theme attributes
+    radialView5.theme.labelColor = [UIColor blueColor];
+    radialView5.theme.labelShadowColor = [UIColor clearColor];
+    
+    /* Whole theme
+     MDRadialProgressTheme *t = [MDRadialProgressTheme standardTheme];
+     t.labelColor = [UIColor blueColor];
+     t.labelShadowColor = [UIColor clearColor];
+     radialView5.theme = t;
+     */
+    
+    [view2 addSubview:radialView5];
+    //	Example 6 ========================================================================
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +114,32 @@ bool allowsAlert;
     allowsSound = (currentSettings.types & UIUserNotificationTypeSound) != 0;
     allowsBadge = (currentSettings.types & UIUserNotificationTypeBadge) != 0;
     allowsAlert = (currentSettings.types & UIUserNotificationTypeAlert) != 0;
+}
+
+
+#pragma mark - Radial Progress View
+
+
+- (MDRadialProgressView *)progressViewWithFrame:(CGRect)frame
+{
+    MDRadialProgressView *view = [[MDRadialProgressView alloc] initWithFrame:frame];
+    
+    // Only required in this demo to align vertically the progress views.
+    view.center = CGPointMake(self.view.center.x + 80, view.center.y);
+    
+    return view;
+}
+
+- (UILabel *)labelAtY:(CGFloat)y andText:(NSString *)text
+{
+    CGRect frame = CGRectMake(5, y, 180, 50);
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.text = text;
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [label.font fontWithSize:14];
+    
+    return label;
 }
 
 @end
