@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RewardController.h
 //  MoveIt
 //
 //  Created by Keith Merrill IV on 2/28/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RewardController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 

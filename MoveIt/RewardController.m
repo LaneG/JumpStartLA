@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  RewardController.m
 //  MoveIt
 //
 //  Created by Keith Merrill IV on 2/28/15.
@@ -7,16 +7,16 @@
 //
 #import <AFNetworking/AFNetworking.h>
 
-#import "ViewController.h"
+#import "RewardController.h"
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 #import "MDRadialProgressLabel.h"
 
-@interface ViewController ()
+@interface RewardController ()
 
 @end
 
-@implementation ViewController
+@implementation RewardController
 
 bool allowNotif;
 bool allowsSound;

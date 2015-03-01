@@ -28,76 +28,85 @@
                         <viewControllerLayoutGuide type="top" id="qN0-my-mPF"/>
                         <viewControllerLayoutGuide type="bottom" id="Pwj-7j-bpH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fxy-fF-tII">
+                    <view key="view" contentMode="scaleAspectFit" id="fxy-fF-tII">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7L-cY-3rw">
-                                <rect key="frame" x="124" y="253" width="75" height="32"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-bR-DAG">
+                                <rect key="frame" x="0.0" y="290" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-Ti-ICL">
+                                <rect key="frame" x="0.0" y="240" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.49999999999999983" height="0.29999999999999999"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grn-CP-630">
+                                <rect key="frame" x="0.0" y="340" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-mh-zmm">
+                                <rect key="frame" x="0.0" y="390" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Your Daily Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-HW-vRi">
+                                <rect key="frame" x="7" y="133" width="308" height="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7L-cY-3rw">
+                                <rect key="frame" x="144" y="256" width="75" height="32"/>
                                 <state key="normal" title="100 Steps">
-                                    <color key="titleColor" red="0.3294117647" green="0.47843137250000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="duL-Ii-PmO"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-bR-DAG">
-                                <rect key="frame" x="0.0" y="289" width="600" height="3"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-Ti-ICL">
-                                <rect key="frame" x="0.0" y="242" width="600" height="3"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-QZ-QUO">
-                                <rect key="frame" x="112" y="300" width="95" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-QZ-QUO">
+                                <rect key="frame" x="142" y="306" width="95" height="24"/>
                                 <state key="normal" title="1,000 Steps">
-                                    <color key="titleColor" red="0.3294117647" green="0.47843137250000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="iTD-48-Bfr"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grn-CP-630">
-                                <rect key="frame" x="0.0" y="340" width="600" height="3"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-Wq-WpF">
-                                <rect key="frame" x="115" y="351" width="93" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-Wq-WpF">
+                                <rect key="frame" x="144" y="355" width="93" height="22"/>
                                 <state key="normal" title="10,000 Steps">
-                                    <color key="titleColor" red="0.3294117647" green="0.47843137250000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="z6n-RB-3KC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-mh-zmm">
-                                <rect key="frame" x="0.0" y="387" width="600" height="3"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose Your Daily Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzV-HW-vRi">
-                                <rect key="frame" x="7" y="133" width="308" height="44"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" red="0.3294117647" green="0.47843137250000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_5758.png" translatesAutoresizingMaskIntoConstraints="NO" id="amF-05-r50">
+                                <rect key="frame" x="104" y="252" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_59872.png" translatesAutoresizingMaskIntoConstraints="NO" id="nmZ-Pj-KCn">
+                                <rect key="frame" x="104" y="353" width="30" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_108290.png" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-Jc-wdW">
+                                <rect key="frame" x="104" y="302" width="30" height="30"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="4ag-QZ-QUO" secondAttribute="centerX" id="FAb-4W-pkP"/>
-                            <constraint firstAttribute="centerX" secondItem="z7L-cY-3rw" secondAttribute="centerX" id="I98-0I-WHf"/>
-                            <constraint firstAttribute="centerX" secondItem="AGe-Wq-WpF" secondAttribute="centerX" id="lfU-VO-f1F"/>
-                            <constraint firstAttribute="centerX" secondItem="fzV-HW-vRi" secondAttribute="centerX" id="mS9-Y2-X4n"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="w6u-ar-yuf"/>
+                    <navigationItem key="navigationItem" id="w6u-ar-yuf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="oxv-08-fLS"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQT-qG-mBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254.40000000000001" y="390.02666666666664"/>
+            <point key="canvasLocation" x="254" y="380"/>
         </scene>
         <!--Your Progress-->
         <scene sceneID="ufC-wZ-h7g">
@@ -124,6 +133,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sendNotif:" destination="x5A-6p-PRh" eventType="touchUpInside" id="bvt-Xd-H4Q"/>
+                                    <segue destination="jNJ-Wq-hjz" kind="push" id="5Qc-Ux-t6o"/>
                                 </connections>
                             </button>
                             <view tag="99" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXs-Ir-JNz">
@@ -139,7 +149,53 @@
             </objects>
             <point key="canvasLocation" x="636.26666666666665" y="405.17333333333335"/>
         </scene>
+        <!--Goal Achieved-->
+        <scene sceneID="AFi-82-Awe">
+            <objects>
+                <viewController title="Goal Achieved" id="jNJ-Wq-hjz" customClass="RewardController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vX2-Fj-rzr"/>
+                        <viewControllerLayoutGuide type="bottom" id="cCf-on-56F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Ft-cc-qAl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bigstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="CaY-bd-rvi">
+                                <rect key="frame" x="123" y="130" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations, You've walked 1000 steps!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZx-Hj-XJo">
+                                <rect key="frame" x="109" y="242" width="152" height="119"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You've unlocked" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnZ-tr-j00">
+                                <rect key="frame" x="122" y="381" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Netflix_Button.png" translatesAutoresizingMaskIntoConstraints="NO" id="yKU-ly-f5Y">
+                                <rect key="frame" x="85" y="430" width="200" height="72"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NdQ-7c-Ria"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paM-0o-U7m" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035.5" y="395"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Netflix_Button.png" width="1000" height="364"/>
+        <image name="bigstar.png" width="469" height="469"/>
+        <image name="noun_108290.png" width="88" height="88"/>
+        <image name="noun_5758.png" width="88" height="88"/>
+        <image name="noun_59872.png" width="88" height="88"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
