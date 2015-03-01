@@ -118,7 +118,6 @@
 		D1A79ADF1AA2847900DEFBB3 /* MoveIt */ = {
 			isa = PBXGroup;
 			children = (
-				D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */,
 				D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */,
 				D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */,
 				D1A79AE41AA2847900DEFBB3 /* AppDelegate.h */,
@@ -128,6 +127,7 @@
 				D1A79AF01AA2847900DEFBB3 /* Images.xcassets */,
 				D1A79AF21AA2847900DEFBB3 /* LaunchScreen.xib */,
 				D1A79AED1AA2847900DEFBB3 /* Main.storyboard */,
+				D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */,
 				D1A79AE71AA2847900DEFBB3 /* MoveIt.xcdatamodeld */,
 				D1A79AE01AA2847900DEFBB3 /* Supporting Files */,
 				D1A79AEA1AA2847900DEFBB3 /* ViewController.h */,

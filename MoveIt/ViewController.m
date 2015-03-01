@@ -5,6 +5,7 @@
 //  Created by Keith Merrill IV on 2/28/15.
 //  Copyright (c) 2015 com.keithmerrill. All rights reserved.
 //
+#import <AFNetworking/AFNetworking.h>
 
 #import "ViewController.h"
 #import "MDRadialProgressView.h"
@@ -21,6 +22,39 @@ bool allowNotif;
 bool allowsSound;
 bool allowsBadge;
 bool allowsAlert;
+static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
+
+- (IBAction)testPOSTBtnPressed:(id)sender
+{
+    // 1
+    NSString *string = [NSString stringWithFormat:@"%@?key=hello", BaseURLString];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    // 2
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+//    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    operation.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // 3
+        NSDictionary *response = (NSDictionary *)responseObject;
+        NSLog(@"response %@", response);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // 4
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    // 5
+    [operation start];
+}
 
 - (IBAction)sendNotif:(id)sender
 {
