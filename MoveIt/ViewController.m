@@ -37,7 +37,6 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     
     // 2
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//    operation.responseSerializer = [AFJSONResponseSerializer serializer];
     operation.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -167,7 +166,6 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 - (NSSet *)dataTypesToWrite
 {
     HKQuantityType *stepCountType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
-    HKQuantityType *weightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
     
     return [NSSet setWithObjects:stepCountType, nil];
 }
@@ -195,8 +193,27 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     HKQuantityType *stepsType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
     
     // Query to get the user's latest number of steps, if it exists.
-    [self.healthStore aapl_mostRecentQuantitySampleOfType:stepsType predicate:nil completion:^(HKQuantity *mostRecentQuantity, NSError *error) {
-        if (!mostRecentQuantity) {
+//    [self.healthStore aapl_mostRecentQuantitySampleOfType:stepsType predicate:nil completion:^(HKQuantity *mostRecentQuantity, NSError *error) {
+//        if (!mostRecentQuantity) {
+//            NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.stepsValueLabel.text = NSLocalizedString(@"Not available", nil);
+//            });
+//        } else {
+//            // Determine the height in the required unit.
+//            HKUnit *stdUnit = [HKUnit countUnit];
+//            double usersSteps = [mostRecentQuantity doubleValueForUnit:stdUnit];
+//            
+//            // Update the user interface.
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.stepsValueLabel.text = [NSNumberFormatter localizedStringFromNumber:@(usersSteps) numberStyle:NSNumberFormatterNoStyle];
+//            });
+//        }
+//    }];
+    
+    [self.healthStore appl_getStepCountForPast24HoursWithCompletion:^(NSArray *mostRecentStatistic, NSError *error) {
+        if (!mostRecentStatistic) {
             NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -204,10 +221,14 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
             });
         } else {
             // Determine the height in the required unit.
-//            HKUnit *heightUnit = [HKUnit inchUnit];
-//            double usersHeight = [mostRecentQuantity doubleValueForUnit:heightUnit];
-            double usersSteps = 10;
             
+            double usersSteps = 0;
+            for (HKStatistics *stat in mostRecentStatistic) {
+                HKQuantity *mostRecentQuantity = [stat sumQuantity];
+                HKUnit *stdUnit = [HKUnit countUnit];
+                usersSteps += [mostRecentQuantity doubleValueForUnit:stdUnit];
+            }
+
             // Update the user interface.
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.stepsValueLabel.text = [NSNumberFormatter localizedStringFromNumber:@(usersSteps) numberStyle:NSNumberFormatterNoStyle];
@@ -218,25 +239,26 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
 #pragma mark - Writing HealthKit Data
 
-- (void)saveHeightIntoHealthStore:(double)height {
-    // Save the user's height into HealthKit.
-    HKUnit *inchUnit = [HKUnit inchUnit];
-    HKQuantity *heightQuantity = [HKQuantity quantityWithUnit:inchUnit doubleValue:height];
-    
-    HKQuantityType *heightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight];
-    NSDate *now = [NSDate date];
-    
-    HKQuantitySample *heightSample = [HKQuantitySample quantitySampleWithType:heightType quantity:heightQuantity startDate:now endDate:now];
-    
-    [self.healthStore saveObject:heightSample withCompletion:^(BOOL success, NSError *error) {
-        if (!success) {
-            NSLog(@"An error occured saving the height sample %@. In your app, try to handle this gracefully. The error was: %@.", heightSample, error);
-            abort();
-        }
-        
-        [self updateUsersStepCountLabel];
-    }];
-}
+//- (void)saveStepsIntoHealthStore:(double)height
+//{
+//    // Save the user's height into HealthKit.
+//    HKUnit *countUnit = [HKUnit countUnit];
+//    HKQuantity *heightQuantity = [HKQuantity quantityWithUnit:inchUnit doubleValue:height];
+//    
+//    HKQuantityType *heightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight];
+//    NSDate *now = [NSDate date];
+//    
+//    HKQuantitySample *heightSample = [HKQuantitySample quantitySampleWithType:heightType quantity:heightQuantity startDate:now endDate:now];
+//    
+//    [self.healthStore saveObject:heightSample withCompletion:^(BOOL success, NSError *error) {
+//        if (!success) {
+//            NSLog(@"An error occured saving the height sample %@. In your app, try to handle this gracefully. The error was: %@.", heightSample, error);
+//            abort();
+//        }
+//        
+//        [self updateUsersStepCountLabel];
+//    }];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
