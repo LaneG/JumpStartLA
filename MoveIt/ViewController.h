@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@import HealthKit;
+
 @interface ViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *label;
+
+@property (nonatomic) HKHealthStore *healthStore;
 
 @end
 

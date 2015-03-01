@@ -11,8 +11,12 @@
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 #import "MDRadialProgressLabel.h"
+#import "HKHealthStore+AAPLExtensions.h"
 
 @interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet UILabel *stepsValueLabel;
+@property (nonatomic, weak) IBOutlet UILabel *stepsUnitLabel;
 
 @end
 
@@ -88,7 +92,8 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     }
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -132,6 +137,106 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     
     [view2 addSubview:radialView5];
     //	Example 6 ========================================================================
+    
+    self.healthStore = [[HKHealthStore alloc] init];
+    // Set up an HKHealthStore, asking the user for read/write permissions. The profile view controller is the
+    // first view controller that's shown to the user, so we'll ask for all of the desired HealthKit permissions now.
+    // In your own app, you should consider requesting permissions the first time a user wants to interact with
+    // HealthKit data.
+    if ([HKHealthStore isHealthDataAvailable]) {
+        NSSet *writeDataTypes = [self dataTypesToWrite];
+        NSSet *readDataTypes = [self dataTypesToRead];
+        
+        [self.healthStore requestAuthorizationToShareTypes:writeDataTypes readTypes:readDataTypes completion:^(BOOL success, NSError *error) {
+            if (!success) {
+                NSLog(@"You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: %@. If you're using a simulator, try it on a device.", error);
+                
+                return;
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Update the user interface based on the current user's health information.
+                [self updateUsersStepCountLabel];
+            });
+        }];
+    }
+}
+
+#pragma mark - HealthKit Permissions
+
+// Returns the types of data that Fit wishes to write to HealthKit.
+- (NSSet *)dataTypesToWrite
+{
+    HKQuantityType *stepCountType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+    HKQuantityType *weightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
+    
+    return [NSSet setWithObjects:stepCountType, nil];
+}
+
+// Returns the types of data that Fit wishes to read from HealthKit.
+- (NSSet *)dataTypesToRead
+{
+    HKQuantityType *stepCountType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+    
+    return [NSSet setWithObjects:stepCountType, nil];
+}
+
+- (void)updateUsersStepCountLabel
+{
+    // Fetch user's default height unit in inches.
+    NSLengthFormatter *lengthFormatter = [[NSLengthFormatter alloc] init];
+    lengthFormatter.unitStyle = NSFormattingUnitStyleLong;
+    
+//    NSLengthFormatterUnit heightFormatterUnit = NSLengthFormatterUnitInch;
+//    NSString *heightUnitString = [lengthFormatter unitStringFromValue:10 unit:heightFormatterUnit];
+//    NSString *localizedHeightUnitDescriptionFormat = NSLocalizedString(@"Height (%@)", nil);
+    
+//    self.stepsUnitLabel.text = [NSString stringWithFormat:localizedHeightUnitDescriptionFormat, heightUnitString];
+    
+    HKQuantityType *stepsType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+    
+    // Query to get the user's latest number of steps, if it exists.
+    [self.healthStore aapl_mostRecentQuantitySampleOfType:stepsType predicate:nil completion:^(HKQuantity *mostRecentQuantity, NSError *error) {
+        if (!mostRecentQuantity) {
+            NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.stepsValueLabel.text = NSLocalizedString(@"Not available", nil);
+            });
+        } else {
+            // Determine the height in the required unit.
+//            HKUnit *heightUnit = [HKUnit inchUnit];
+//            double usersHeight = [mostRecentQuantity doubleValueForUnit:heightUnit];
+            double usersSteps = 10;
+            
+            // Update the user interface.
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.stepsValueLabel.text = [NSNumberFormatter localizedStringFromNumber:@(usersSteps) numberStyle:NSNumberFormatterNoStyle];
+            });
+        }
+    }];
+}
+
+#pragma mark - Writing HealthKit Data
+
+- (void)saveHeightIntoHealthStore:(double)height {
+    // Save the user's height into HealthKit.
+    HKUnit *inchUnit = [HKUnit inchUnit];
+    HKQuantity *heightQuantity = [HKQuantity quantityWithUnit:inchUnit doubleValue:height];
+    
+    HKQuantityType *heightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight];
+    NSDate *now = [NSDate date];
+    
+    HKQuantitySample *heightSample = [HKQuantitySample quantitySampleWithType:heightType quantity:heightQuantity startDate:now endDate:now];
+    
+    [self.healthStore saveObject:heightSample withCompletion:^(BOOL success, NSError *error) {
+        if (!success) {
+            NSLog(@"An error occured saving the height sample %@. In your app, try to handle this gracefully. The error was: %@.", heightSample, error);
+            abort();
+        }
+        
+        [self updateUsersStepCountLabel];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
