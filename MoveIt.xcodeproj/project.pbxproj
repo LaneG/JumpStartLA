@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F92CFA61AA3C04600DA6F2C /* Trophy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFA21AA3C04600DA6F2C /* Trophy.svg */; };
+		6F92CFAA1AA3C34E00DA6F2C /* noun_5758_cc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFA91AA3C34E00DA6F2C /* noun_5758_cc.png */; };
+		6F92CFAE1AA3C56900DA6F2C /* noun_59872.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFAB1AA3C56900DA6F2C /* noun_59872.png */; };
+		6F92CFAF1AA3C56900DA6F2C /* noun_108290.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFAC1AA3C56900DA6F2C /* noun_108290.png */; };
+		6F92CFB01AA3C56900DA6F2C /* noun_5758.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFAD1AA3C56900DA6F2C /* noun_5758.png */; };
+		6F92CFB21AA3CA7800DA6F2C /* bigstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFB11AA3CA7800DA6F2C /* bigstar.png */; };
+		6F92CFB41AA3CDBC00DA6F2C /* Netflix_Logo_Digital+Video.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFB31AA3CDBC00DA6F2C /* Netflix_Logo_Digital+Video.png */; };
+		6F92CFB71AA3D41A00DA6F2C /* RewardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F92CFB51AA3D41A00DA6F2C /* RewardController.m */; };
+		6F92CFB91AA3D54F00DA6F2C /* Netflix_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92CFB81AA3D54F00DA6F2C /* Netflix_Button.png */; };
 		AC293BFF104D8BDE94C7EB50 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E6BAC0D48CC812334841A9 /* libPods.a */; };
 		D13E4F8D1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E4F8C1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.m */; };
 		D1A79AE31AA2847900DEFBB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A79AE21AA2847900DEFBB3 /* main.m */; };
@@ -33,6 +42,16 @@
 
 /* Begin PBXFileReference section */
 		5F85C75841AED9864C6C2FE0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6F92CFA21AA3C04600DA6F2C /* Trophy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Trophy.svg; sourceTree = "<group>"; };
+		6F92CFA91AA3C34E00DA6F2C /* noun_5758_cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_5758_cc.png; sourceTree = "<group>"; };
+		6F92CFAB1AA3C56900DA6F2C /* noun_59872.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_59872.png; sourceTree = "<group>"; };
+		6F92CFAC1AA3C56900DA6F2C /* noun_108290.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_108290.png; sourceTree = "<group>"; };
+		6F92CFAD1AA3C56900DA6F2C /* noun_5758.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_5758.png; sourceTree = "<group>"; };
+		6F92CFB11AA3CA7800DA6F2C /* bigstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigstar.png; sourceTree = "<group>"; };
+		6F92CFB31AA3CDBC00DA6F2C /* Netflix_Logo_Digital+Video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Netflix_Logo_Digital+Video.png"; sourceTree = "<group>"; };
+		6F92CFB51AA3D41A00DA6F2C /* RewardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardController.m; sourceTree = "<group>"; };
+		6F92CFB61AA3D41A00DA6F2C /* RewardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardController.h; sourceTree = "<group>"; };
+		6F92CFB81AA3D54F00DA6F2C /* Netflix_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Netflix_Button.png; sourceTree = "<group>"; };
 		AD25393BD03B3B31BEDFDEB8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C7E6BAC0D48CC812334841A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13E4F8B1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKHealthStore+AAPLExtensions.h"; sourceTree = "<group>"; };
@@ -118,6 +137,8 @@
 		D1A79ADF1AA2847900DEFBB3 /* MoveIt */ = {
 			isa = PBXGroup;
 			children = (
+				6F92CFB51AA3D41A00DA6F2C /* RewardController.m */,
+				6F92CFB61AA3D41A00DA6F2C /* RewardController.h */,
 				D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */,
 				D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */,
 				D1A79AE41AA2847900DEFBB3 /* AppDelegate.h */,
@@ -139,6 +160,14 @@
 		D1A79AE01AA2847900DEFBB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6F92CFB81AA3D54F00DA6F2C /* Netflix_Button.png */,
+				6F92CFB31AA3CDBC00DA6F2C /* Netflix_Logo_Digital+Video.png */,
+				6F92CFB11AA3CA7800DA6F2C /* bigstar.png */,
+				6F92CFAB1AA3C56900DA6F2C /* noun_59872.png */,
+				6F92CFAC1AA3C56900DA6F2C /* noun_108290.png */,
+				6F92CFAD1AA3C56900DA6F2C /* noun_5758.png */,
+				6F92CFA91AA3C34E00DA6F2C /* noun_5758_cc.png */,
+				6F92CFA21AA3C04600DA6F2C /* Trophy.svg */,
 				D1A79AE11AA2847900DEFBB3 /* Info.plist */,
 				D1A79AE21AA2847900DEFBB3 /* main.m */,
 			);
@@ -250,8 +279,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F92CFB01AA3C56900DA6F2C /* noun_5758.png in Resources */,
 				D1A79AEF1AA2847900DEFBB3 /* Main.storyboard in Resources */,
+				6F92CFAE1AA3C56900DA6F2C /* noun_59872.png in Resources */,
+				6F92CFB21AA3CA7800DA6F2C /* bigstar.png in Resources */,
+				6F92CFB41AA3CDBC00DA6F2C /* Netflix_Logo_Digital+Video.png in Resources */,
+				6F92CFB91AA3D54F00DA6F2C /* Netflix_Button.png in Resources */,
+				6F92CFAF1AA3C56900DA6F2C /* noun_108290.png in Resources */,
+				6F92CFAA1AA3C34E00DA6F2C /* noun_5758_cc.png in Resources */,
 				D1A79AF41AA2847900DEFBB3 /* LaunchScreen.xib in Resources */,
+				6F92CFA61AA3C04600DA6F2C /* Trophy.svg in Resources */,
 				D1A79AF11AA2847900DEFBB3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +346,7 @@
 				D1A79AE31AA2847900DEFBB3 /* main.m in Sources */,
 				D1A79AEC1AA2847900DEFBB3 /* ViewController.m in Sources */,
 				D1A79AE91AA2847900DEFBB3 /* MoveIt.xcdatamodeld in Sources */,
+				6F92CFB71AA3D41A00DA6F2C /* RewardController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
