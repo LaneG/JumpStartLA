@@ -57,32 +57,31 @@ bool allowsAlert;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated
+     ];
+    // Do any additional setup after loading the view, typically from a nib.
     
     CGRect frame = self.view.bounds;
     frame.size.height = frame.size.height / 3;
     
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height, frame.size.width, frame.size.height)];
-    view2.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:view2];
-    
-    // self.view.backgroundColor = [UIColor whiteColor];
-    
-    int x = self.view.center.x;
-    int y = 20;
+    int x = 0;
+    int y = 0;
     
     //	Example 6 ========================================================================
-    CGRect labelFrame = CGRectMake(x, y, frame.size.width, 40);
-    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
-    label.text = @"Start from slice 3, custom label color with no shadow: ";
-    [view2 addSubview:label];
+    UIView *thisView = (UIView*)[self.view viewWithTag:99];
     
-    frame = CGRectMake(x, y, 100, 100);
-    MDRadialProgressView *radialView5 = [self progressViewWithFrame:frame];
+    CGRect frame2 = CGRectMake(0, 0, 220, 220);
+    MDRadialProgressView *radialView5 = [self progressViewWithFrame:frame2];
     
     radialView5.progressTotal = 20; // total number of segments to break wheel into
     radialView5.progressCounter = 14; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
     radialView5.startingSlice = 1;
-    radialView5.theme.sliceDividerHidden = NO;
+    radialView5.theme.thickness = 25;
+    radialView5.theme.sliceDividerHidden = YES;
     radialView5.theme.sliceDividerThickness = 1;
     
     // theme update works both changing the theme or the theme attributes
@@ -96,7 +95,7 @@ bool allowsAlert;
      radialView5.theme = t;
      */
     
-    [view2 addSubview:radialView5];
+    [thisView addSubview:radialView5];
     //	Example 6 ========================================================================
 }
 
