@@ -115,9 +115,6 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     CGRect frame = self.view.bounds;
     frame.size.height = frame.size.height / 3;
     
-    int x = 0;
-    int y = 0;
-    
     //	Example 6 ========================================================================
     UIView *thisView = (UIView*)[self.view viewWithTag:99];
     
@@ -168,7 +165,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Update the user interface based on the current user's health information.
-                [self updateUsersStepCountLabel];
+                [self updateUsersStepCountProgress];
             });
         }];
     }
@@ -192,40 +189,8 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     return [NSSet setWithObjects:stepCountType, nil];
 }
 
-- (void)updateUsersStepCountLabel
+- (void)updateUsersStepCountProgress
 {
-    // Fetch user's default height unit in inches.
-    NSLengthFormatter *lengthFormatter = [[NSLengthFormatter alloc] init];
-    lengthFormatter.unitStyle = NSFormattingUnitStyleLong;
-    
-//    NSLengthFormatterUnit heightFormatterUnit = NSLengthFormatterUnitInch;
-//    NSString *heightUnitString = [lengthFormatter unitStringFromValue:10 unit:heightFormatterUnit];
-//    NSString *localizedHeightUnitDescriptionFormat = NSLocalizedString(@"Height (%@)", nil);
-    
-//    self.stepsUnitLabel.text = [NSString stringWithFormat:localizedHeightUnitDescriptionFormat, heightUnitString];
-    
-    HKQuantityType *stepsType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
-    
-    // Query to get the user's latest number of steps, if it exists.
-//    [self.healthStore aapl_mostRecentQuantitySampleOfType:stepsType predicate:nil completion:^(HKQuantity *mostRecentQuantity, NSError *error) {
-//        if (!mostRecentQuantity) {
-//            NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                self.stepsValueLabel.text = NSLocalizedString(@"Not available", nil);
-//            });
-//        } else {
-//            // Determine the height in the required unit.
-//            HKUnit *stdUnit = [HKUnit countUnit];
-//            double usersSteps = [mostRecentQuantity doubleValueForUnit:stdUnit];
-//            
-//            // Update the user interface.
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                self.stepsValueLabel.text = [NSNumberFormatter localizedStringFromNumber:@(usersSteps) numberStyle:NSNumberFormatterNoStyle];
-//            });
-//        }
-//    }];
-    
     [self.healthStore appl_getStepCountForPast24HoursWithCompletion:^(NSArray *mostRecentStatistic, NSError *error) {
         if (!mostRecentStatistic) {
             NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
@@ -251,30 +216,8 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     }];
 }
 
-#pragma mark - Writing HealthKit Data
-
-//- (void)saveStepsIntoHealthStore:(double)height
-//{
-//    // Save the user's height into HealthKit.
-//    HKUnit *countUnit = [HKUnit countUnit];
-//    HKQuantity *heightQuantity = [HKQuantity quantityWithUnit:inchUnit doubleValue:height];
-//    
-//    HKQuantityType *heightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight];
-//    NSDate *now = [NSDate date];
-//    
-//    HKQuantitySample *heightSample = [HKQuantitySample quantitySampleWithType:heightType quantity:heightQuantity startDate:now endDate:now];
-//    
-//    [self.healthStore saveObject:heightSample withCompletion:^(BOOL success, NSError *error) {
-//        if (!success) {
-//            NSLog(@"An error occured saving the height sample %@. In your app, try to handle this gracefully. The error was: %@.", heightSample, error);
-//            abort();
-//        }
-//        
-//        [self updateUsersStepCountLabel];
-//    }];
-//}
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -292,7 +235,6 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
 
 #pragma mark - Radial Progress View
-
 
 - (MDRadialProgressView *)progressViewWithFrame:(CGRect)frame
 {
