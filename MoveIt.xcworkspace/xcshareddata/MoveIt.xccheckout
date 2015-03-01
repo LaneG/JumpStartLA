@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D1263D7F-7AD5-4364-AC86-DB8BAE071199</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MoveIt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>532501398C3210C368E34A1019991A84358FEA7D</key>
+		<string>https://github.com/LaneH/JumpStartLA.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MoveIt.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>532501398C3210C368E34A1019991A84358FEA7D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LaneH/JumpStartLA.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>532501398C3210C368E34A1019991A84358FEA7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>532501398C3210C368E34A1019991A84358FEA7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JumpStartLA</string>
+		</dict>
+	</array>
+</dict>
+</plist>
