@@ -17,6 +17,7 @@
 		D1A79AF11AA2847900DEFBB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A79AF01AA2847900DEFBB3 /* Images.xcassets */; };
 		D1A79AF41AA2847900DEFBB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A79AF21AA2847900DEFBB3 /* LaunchScreen.xib */; };
 		D1A79B001AA2847900DEFBB3 /* MoveItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A79AFF1AA2847900DEFBB3 /* MoveItTests.m */; };
+		D1BB38ED1AA304F0009548AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BB38EC1AA304F0009548AC /* HealthKit.framework */; };
 		D1C619B41AA2A48000FF556F /* AAPLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		D1A79AF91AA2847900DEFBB3 /* MoveItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A79AFE1AA2847900DEFBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1A79AFF1AA2847900DEFBB3 /* MoveItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveItTests.m; sourceTree = "<group>"; };
+		D1BB38EC1AA304F0009548AC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MoveIt.entitlements; sourceTree = "<group>"; };
 		D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLProfileViewController.h; sourceTree = "<group>"; };
 		D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC293BFF104D8BDE94C7EB50 /* libPods.a in Frameworks */,
+				D1BB38ED1AA304F0009548AC /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 		7D8BC7407E0D6986D0E55130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1BB38EC1AA304F0009548AC /* HealthKit.framework */,
 				C7E6BAC0D48CC812334841A9 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -113,6 +118,7 @@
 		D1A79ADF1AA2847900DEFBB3 /* MoveIt */ = {
 			isa = PBXGroup;
 			children = (
+				D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */,
 				D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */,
 				D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */,
 				D1A79AE41AA2847900DEFBB3 /* AppDelegate.h */,
@@ -208,6 +214,11 @@
 					D1A79ADC1AA2847900DEFBB3 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = SX493JL6TF;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					D1A79AF81AA2847900DEFBB3 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -420,10 +431,13 @@
 			baseConfigurationReference = 5F85C75841AED9864C6C2FE0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoveIt/MoveIt.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoveIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -432,10 +446,13 @@
 			baseConfigurationReference = AD25393BD03B3B31BEDFDEB8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoveIt/MoveIt.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoveIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
