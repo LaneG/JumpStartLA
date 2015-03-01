@@ -25,6 +25,15 @@
                                     <segue destination="vXH-G8-pgi" kind="show" id="pan-lw-fN9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9S-PB-a14">
+                                <rect key="frame" x="16" y="87" width="100" height="30"/>
+                                <state key="normal" title="Goal Achieved">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotif:" destination="x5A-6p-PRh" eventType="touchUpInside" id="bvt-Xd-H4Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
