@@ -53,14 +53,14 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999996" height="1"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Daily Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzV-HW-vRi">
-                                <rect key="frame" x="7" y="133" width="308" height="44"/>
+                                <rect key="frame" x="44" y="133" width="308" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z7L-cY-3rw">
-                                <rect key="frame" x="144" y="256" width="75" height="32"/>
+                                <rect key="frame" x="181" y="256" width="75" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="100 Steps">
                                     <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,7 +72,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ag-QZ-QUO">
-                                <rect key="frame" x="142" y="306" width="95" height="24"/>
+                                <rect key="frame" x="179" y="306" width="95" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1,000 Steps">
                                     <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AGe-Wq-WpF">
-                                <rect key="frame" x="144" y="355" width="93" height="22"/>
+                                <rect key="frame" x="181" y="355" width="93" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="10,000 Steps">
                                     <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,15 +96,15 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_5758.png" id="amF-05-r50">
-                                <rect key="frame" x="104" y="252" width="30" height="30"/>
+                                <rect key="frame" x="141" y="252" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_59872.png" id="nmZ-Pj-KCn">
-                                <rect key="frame" x="104" y="353" width="30" height="30"/>
+                                <rect key="frame" x="141" y="353" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_108290.png" id="8kq-Jc-wdW">
-                                <rect key="frame" x="104" y="302" width="30" height="30"/>
+                                <rect key="frame" x="141" y="302" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
