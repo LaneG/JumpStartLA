@@ -28,6 +28,7 @@
 		D1A79B001AA2847900DEFBB3 /* MoveItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A79AFF1AA2847900DEFBB3 /* MoveItTests.m */; };
 		D1BB38ED1AA304F0009548AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BB38EC1AA304F0009548AC /* HealthKit.framework */; };
 		D1EF766E1AA3E6AE0016A1B9 /* NetflixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF766D1AA3E6AE0016A1B9 /* NetflixViewController.m */; };
+		D1EF76711AA3E88F0016A1B9 /* SetGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF76701AA3E88F0016A1B9 /* SetGoalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MoveIt.entitlements; sourceTree = "<group>"; };
 		D1EF766C1AA3E6AE0016A1B9 /* NetflixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetflixViewController.h; sourceTree = "<group>"; };
 		D1EF766D1AA3E6AE0016A1B9 /* NetflixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetflixViewController.m; sourceTree = "<group>"; };
+		D1EF766F1AA3E88F0016A1B9 /* SetGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGoalViewController.h; sourceTree = "<group>"; };
+		D1EF76701AA3E88F0016A1B9 /* SetGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGoalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 				D1A79AEB1AA2847900DEFBB3 /* ViewController.m */,
 				D1EF766C1AA3E6AE0016A1B9 /* NetflixViewController.h */,
 				D1EF766D1AA3E6AE0016A1B9 /* NetflixViewController.m */,
+				D1EF766F1AA3E88F0016A1B9 /* SetGoalViewController.h */,
+				D1EF76701AA3E88F0016A1B9 /* SetGoalViewController.m */,
 			);
 			path = MoveIt;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1EF76711AA3E88F0016A1B9 /* SetGoalViewController.m in Sources */,
 				D13E4F8D1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.m in Sources */,
 				D1A79AE61AA2847900DEFBB3 /* AppDelegate.m in Sources */,
 				D1A79AE31AA2847900DEFBB3 /* main.m in Sources */,
