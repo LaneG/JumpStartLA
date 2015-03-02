@@ -5,6 +5,7 @@
 //  Created by Keith Merrill IV on 2/28/15.
 //  Copyright (c) 2015 com.keithmerrill. All rights reserved.
 //
+
 #import <AFNetworking/AFNetworking.h>
 
 #import "ViewController.h"
@@ -127,7 +128,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     radialView5.progressTotal = 20; // total number of segments to break wheel into
     radialView5.progressCounter = 14; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
     radialView5.startingSlice = 1;
-    radialView5.theme.thickness = 25;
+    radialView5.theme.thickness = 35;
     radialView5.theme.sliceDividerHidden = YES;
     radialView5.theme.sliceDividerThickness = 1;
     
@@ -135,6 +136,8 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     radialView5.theme.labelColor = [self colorWithHex:@"#4c4c4c"];
     radialView5.theme.labelShadowColor = [UIColor clearColor];
     radialView5.theme.completedColor = [self colorWithHex:@"#73BE00"];
+    
+    radialView5.label.hidden = YES;
     /*
      115 190 0
     73BE00
