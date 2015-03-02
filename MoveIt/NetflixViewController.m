@@ -9,6 +9,7 @@
 #import "NetflixViewController.h"
 
 @interface NetflixViewController () <UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *netflix;
 
 @end
 
@@ -16,6 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: [NSURL URLWithString: @"www.netflix.com"] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 999];
+    [self.netflix loadRequest: request];
+    [self.netflix loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://netflix.com/"]]];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: [NSURL URLWithString: @"www.netflix.com"] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 999];
+    [self.netflix loadRequest: request];
+     [self.netflix loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://netflix.com/"]]];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -113,6 +113,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     self.radialView5.startingSlice = 1;
     self.radialView5.theme.thickness = 25;
     self.radialView5.theme.sliceDividerHidden = YES;
+    self.radialView5.label.hidden = YES;
     self.radialView5.theme.sliceDividerThickness = 1;
     
     // theme update works both changing the theme or the theme attributes
