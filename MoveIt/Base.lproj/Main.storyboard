@@ -183,9 +183,6 @@
                     <navigationItem key="navigationItem" title="Your Progress" id="ROY-DK-ofd">
                         <barButtonItem key="backBarButtonItem" title="Your Progress" id="gMp-wO-7QQ"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="hle" destination="duy-kI-xB2" id="qvq-nr-fNo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,6 +260,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="i7d-Zp-3z2"/>
+                    <connections>
+                        <outlet property="netflix" destination="Qg7-va-hmi" id="5af-jQ-7nu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l3-iL-lC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
