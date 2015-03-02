@@ -23,7 +23,7 @@
         <!--Set a Goal-->
         <scene sceneID="NIr-x1-ti3">
             <objects>
-                <viewController title="Set a Goal" id="StI-aW-Qwg" sceneMemberID="viewController">
+                <viewController title="Set a Goal" id="StI-aW-Qwg" customClass="SetGoalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="fxy-fF-tII">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="steps100BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="9DP-ky-XKv"/>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="duL-Ii-PmO"/>
                                 </connections>
                             </button>
@@ -78,6 +79,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="steps1000BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="aAe-XZ-5KW"/>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="iTD-48-Bfr"/>
                                 </connections>
                             </button>
@@ -89,6 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="steps10000BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="0k8-nX-E0Z"/>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="z6n-RB-3KC"/>
                                 </connections>
                             </button>
