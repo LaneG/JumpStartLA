@@ -134,10 +134,6 @@
 		D1A79ADF1AA2847900DEFBB3 /* MoveIt */ = {
 			isa = PBXGroup;
 			children = (
-				6F92CFB51AA3D41A00DA6F2C /* RewardController.m */,
-				6F92CFB61AA3D41A00DA6F2C /* RewardController.h */,
-				D1C619B21AA2A48000FF556F /* AAPLProfileViewController.h */,
-				D1C619B31AA2A48000FF556F /* AAPLProfileViewController.m */,
 				D1A79AE41AA2847900DEFBB3 /* AppDelegate.h */,
 				D1A79AE51AA2847900DEFBB3 /* AppDelegate.m */,
 				D13E4F8B1AA2A3E1009572C2 /* HKHealthStore+AAPLExtensions.h */,
@@ -147,6 +143,8 @@
 				D1A79AED1AA2847900DEFBB3 /* Main.storyboard */,
 				D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */,
 				D1A79AE71AA2847900DEFBB3 /* MoveIt.xcdatamodeld */,
+				6F92CFB61AA3D41A00DA6F2C /* RewardController.h */,
+				6F92CFB51AA3D41A00DA6F2C /* RewardController.m */,
 				D1A79AE01AA2847900DEFBB3 /* Supporting Files */,
 				D1A79AEA1AA2847900DEFBB3 /* ViewController.h */,
 				D1A79AEB1AA2847900DEFBB3 /* ViewController.m */,
