@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="1035" y="395"/>
         </scene>
-        <!--View Controller-->
+        <!--Netflix View Controller-->
         <scene sceneID="iRx-M3-ieL">
             <objects>
-                <viewController id="5uc-32-HAt" sceneMemberID="viewController">
+                <viewController id="5uc-32-HAt" customClass="NetflixViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y99-A4-ctJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
