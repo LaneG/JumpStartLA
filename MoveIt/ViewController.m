@@ -5,7 +5,6 @@
 //  Created by Keith Merrill IV on 2/28/15.
 //  Copyright (c) 2015 com.keithmerrill. All rights reserved.
 //
-#import <AFNetworking/AFNetworking.h>
 
 #import "ViewController.h"
 #import "MDRadialProgressView.h"
@@ -16,8 +15,13 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSTimer *pollingTimer;
-@property (nonatomic) NSInteger stepCountGoal;
+
 @property (nonatomic, strong) MDRadialProgressView *radialView5;
+
+@property (weak, nonatomic) IBOutlet UILabel *stepCountGoal;
+@property (weak, nonatomic) IBOutlet UILabel *stepCountProgress;
+@property (weak, nonatomic) IBOutlet UILabel *stepCountRemaining;
+@property (nonatomic) NSInteger stepCount;
 
 @end
 
@@ -28,37 +32,6 @@ bool allowsSound;
 bool allowsBadge;
 bool allowsAlert;
 static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
-
-- (IBAction)testPOSTBtnPressed:(id)sender
-{
-    // 1
-    NSString *string = [NSString stringWithFormat:@"%@?key=hello", BaseURLString];
-    NSURL *url = [NSURL URLWithString:string];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    // 2
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // 3
-        NSDictionary *response = (NSDictionary *)responseObject;
-        NSLog(@"response %@", response);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        // 4
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }];
-    
-    // 5
-    [operation start];
-}
 
 - (IBAction)sendNotif:(id)sender
 {
@@ -123,7 +96,8 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
      ];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.stepCountGoal = 2000;
+    self.stepCount = 2000;
+    self.stepCountGoal.text = [NSString stringWithFormat:@"%ld", (long)self.stepCount];
     
     CGRect frame = self.view.bounds;
     frame.size.height = frame.size.height / 3;
@@ -134,7 +108,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     CGRect frame2 = CGRectMake(0, 0, 220, 220);
     self.radialView5 = [self progressViewWithFrame:frame2];
     
-    self.radialView5.progressTotal = self.stepCountGoal; // total number of segments to break wheel into
+    self.radialView5.progressTotal = self.stepCount; // total number of segments to break wheel into
     self.radialView5.progressCounter = 0; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
     self.radialView5.startingSlice = 1;
     self.radialView5.theme.thickness = 25;
@@ -157,7 +131,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
      radialView5.theme = t;
      */
     
-    [thisView addSubview:self.radialView5];
+//    [thisView addSubview:self.radialView5];
     //	Example 6 ========================================================================
     
     self.healthStore = [[HKHealthStore alloc] init];
@@ -230,7 +204,9 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
             // Update the user interface.
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.radialView5.progressCounter = usersSteps;
+//                self.radialView5.progressCounter = usersSteps;
+                self.stepCountProgress.text = [NSString stringWithFormat:@"%f", usersSteps];
+                self.stepCountRemaining.text = [NSString stringWithFormat:@"%f", (self.stepCount - usersSteps)];
             });
         }
     }];
