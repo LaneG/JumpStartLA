@@ -15,8 +15,9 @@
 
 @interface ViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *stepsValueLabel;
-@property (nonatomic, weak) IBOutlet UILabel *stepsUnitLabel;
+@property (nonatomic, strong) NSTimer *pollingTimer;
+@property (nonatomic) NSInteger stepCountGoal;
+@property (nonatomic, strong) MDRadialProgressView *radialView5;
 
 @end
 
@@ -97,7 +98,16 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (UIColor*)colorWithHex:(NSString*)hex {
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.pollingTimer invalidate];
+    self.pollingTimer = nil;
+}
+
+- (UIColor*)colorWithHex:(NSString*)hex
+{
     unsigned int c;
     if ([hex characterAtIndex:0] == '#') {
         [[NSScanner scannerWithString:[hex substringFromIndex:1]] scanHexInt:&c];
@@ -107,10 +117,13 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     return [UIColor colorWithRed:((c & 0xff0000) >> 16)/255.0 green:((c & 0xff00) >> 8)/255.0 blue:(c & 0xff)/255.0 alpha:1.0];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated
      ];
     // Do any additional setup after loading the view, typically from a nib.
+
+    self.stepCountGoal = 2000;
     
     CGRect frame = self.view.bounds;
     frame.size.height = frame.size.height / 3;
@@ -119,19 +132,19 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     UIView *thisView = (UIView*)[self.view viewWithTag:99];
     
     CGRect frame2 = CGRectMake(0, 0, 220, 220);
-    MDRadialProgressView *radialView5 = [self progressViewWithFrame:frame2];
+    self.radialView5 = [self progressViewWithFrame:frame2];
     
-    radialView5.progressTotal = 20; // total number of segments to break wheel into
-    radialView5.progressCounter = 14; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
-    radialView5.startingSlice = 1;
-    radialView5.theme.thickness = 25;
-    radialView5.theme.sliceDividerHidden = YES;
-    radialView5.theme.sliceDividerThickness = 1;
+    self.radialView5.progressTotal = self.stepCountGoal; // total number of segments to break wheel into
+    self.radialView5.progressCounter = 0; // will a) highlight this many segments && 2) display (this) * (100/#segments)  as center value
+    self.radialView5.startingSlice = 1;
+    self.radialView5.theme.thickness = 25;
+    self.radialView5.theme.sliceDividerHidden = YES;
+    self.radialView5.theme.sliceDividerThickness = 1;
     
     // theme update works both changing the theme or the theme attributes
-    radialView5.theme.labelColor = [self colorWithHex:@"#4c4c4c"];
-    radialView5.theme.labelShadowColor = [UIColor clearColor];
-    radialView5.theme.completedColor = [self colorWithHex:@"#73BE00"];
+    self.radialView5.theme.labelColor = [self colorWithHex:@"#4c4c4c"];
+    self.radialView5.theme.labelShadowColor = [UIColor clearColor];
+    self.radialView5.theme.completedColor = [self colorWithHex:@"#73BE00"];
     /*
      115 190 0
     73BE00
@@ -144,7 +157,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
      radialView5.theme = t;
      */
     
-    [thisView addSubview:radialView5];
+    [thisView addSubview:self.radialView5];
     //	Example 6 ========================================================================
     
     self.healthStore = [[HKHealthStore alloc] init];
@@ -152,10 +165,17 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     // first view controller that's shown to the user, so we'll ask for all of the desired HealthKit permissions now.
     // In your own app, you should consider requesting permissions the first time a user wants to interact with
     // HealthKit data.
-    if ([HKHealthStore isHealthDataAvailable]) {
+    [HKHealthStore isHealthDataAvailable];
+    
+    self.pollingTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateProgressView:) userInfo:nil repeats:YES];
+}
+
+- (void)updateProgressView:(NSInteger)steps
+{
+    if (self.pollingTimer) {
         NSSet *writeDataTypes = [self dataTypesToWrite];
         NSSet *readDataTypes = [self dataTypesToRead];
-        
+
         [self.healthStore requestAuthorizationToShareTypes:writeDataTypes readTypes:readDataTypes completion:^(BOOL success, NSError *error) {
             if (!success) {
                 NSLog(@"You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: %@. If you're using a simulator, try it on a device.", error);
@@ -193,10 +213,10 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 {
     [self.healthStore appl_getStepCountForPast24HoursWithCompletion:^(NSArray *mostRecentStatistic, NSError *error) {
         if (!mostRecentStatistic) {
-            NSLog(@"Either an error occured fetching the user's height information or none has been stored yet. In your app, try to handle this gracefully.");
+            NSLog(@"Either an error occured fetching the user's step count information or none has been stored yet. In your app, try to handle this gracefully.");
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.stepsValueLabel.text = NSLocalizedString(@"Not available", nil);
+                NSLog(@"meh");
             });
         } else {
             // Determine the height in the required unit.
@@ -210,7 +230,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
             // Update the user interface.
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.stepsValueLabel.text = [NSNumberFormatter localizedStringFromNumber:@(usersSteps) numberStyle:NSNumberFormatterNoStyle];
+                self.radialView5.progressCounter = usersSteps;
             });
         }
     }];
