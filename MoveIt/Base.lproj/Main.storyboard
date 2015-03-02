@@ -180,6 +180,9 @@
                     <navigationItem key="navigationItem" title="Your Progress" id="ROY-DK-ofd">
                         <barButtonItem key="backBarButtonItem" title="Change Goal" id="gMp-wO-7QQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="hle" destination="duy-kI-xB2" id="qvq-nr-fNo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,10 +221,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Netflix_Button.png" id="yKU-ly-f5Y">
-                                <rect key="frame" x="131" y="503" width="154" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2zf-nj-6Xf">
+                                <rect key="frame" x="131" y="503" width="155" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button" image="Netflix_Button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5uc-32-HAt" kind="push" id="G1v-sj-1Jh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -230,6 +239,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paM-0o-U7m" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1035" y="395"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iRx-M3-ieL">
+            <objects>
+                <viewController id="5uc-32-HAt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y99-A4-ctJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="Qg7-va-hmi">
+                                <rect key="frame" x="-5" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5uc-32-HAt" id="adr-rt-zV6"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="i7d-Zp-3z2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7l3-iL-lC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="396"/>
         </scene>
     </scenes>
     <resources>
