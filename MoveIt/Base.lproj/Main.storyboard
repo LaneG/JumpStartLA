@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQT-qG-mBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="380"/>
+            <point key="canvasLocation" x="267" y="396"/>
         </scene>
         <!--Your Progress-->
         <scene sceneID="ufC-wZ-h7g">
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="405"/>
+            <point key="canvasLocation" x="659" y="396"/>
         </scene>
         <!--Goal Achieved-->
         <scene sceneID="AFi-82-Awe">
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paM-0o-U7m" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="395"/>
+            <point key="canvasLocation" x="1058" y="395"/>
         </scene>
         <!--Netflix View Controller-->
         <scene sceneID="iRx-M3-ieL">
@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l3-iL-lC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="396"/>
+            <point key="canvasLocation" x="1451" y="396"/>
         </scene>
     </scenes>
     <resources>

@@ -130,7 +130,7 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
      radialView5.theme = t;
      */
     
-//    [thisView addSubview:self.radialView5];
+    [thisView addSubview:self.radialView5];
     //	Example 6 ========================================================================
     
     self.healthStore = [[HKHealthStore alloc] init];
@@ -203,9 +203,11 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
             // Update the user interface.
             dispatch_async(dispatch_get_main_queue(), ^{
-//                self.radialView5.progressCounter = usersSteps;
-                self.stepCountProgress.text = [NSString stringWithFormat:@"%f", usersSteps];
-                self.stepCountRemaining.text = [NSString stringWithFormat:@"%f", (self.stepCount - usersSteps)];
+                self.radialView5.progressCounter = usersSteps;
+                self.stepCountProgress.text = [NSString stringWithFormat:@"%0.0f", usersSteps];
+            NSLog(@"%f", usersSteps);
+            NSLog(@"%f", (self.stepCount - usersSteps));
+                self.stepCountRemaining.text = [NSString stringWithFormat:@"%0.0f", (self.stepCount - usersSteps)];
             });
         }
     }];
