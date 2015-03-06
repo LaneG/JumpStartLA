@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property (nonatomic) HKHealthStore *healthStore;
+@property (nonatomic) NSInteger stepCount;
 
 @end
 

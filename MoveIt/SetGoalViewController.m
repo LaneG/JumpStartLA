@@ -8,6 +8,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "SetGoalViewController.h"
+#import "ViewController.h"
 
 @interface SetGoalViewController ()
 
@@ -73,14 +74,21 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"steps500Segue"]) {
+        ViewController *vc = [segue destinationViewController];
+        vc.stepCount = 500;
+    } else if ([[segue identifier] isEqualToString:@"steps1000Segue"]) {
+        ViewController *vc = [segue destinationViewController];
+        vc.stepCount = 1000;
+    } else if ([[segue identifier] isEqualToString:@"steps10000Segue"]) {
+        ViewController *vc = [segue destinationViewController];
+        vc.stepCount = 10000;
+    }
 }
-*/
 
 @end

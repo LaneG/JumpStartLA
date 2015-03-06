@@ -62,13 +62,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z7L-cY-3rw">
                                 <rect key="frame" x="181" y="256" width="75" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="100 Steps">
+                                <state key="normal" title="500 Steps">
                                     <color key="titleColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="steps100BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="9DP-ky-XKv"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="duL-Ii-PmO"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="steps500Segue" id="duL-Ii-PmO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ag-QZ-QUO">
@@ -80,7 +80,7 @@
                                 </state>
                                 <connections>
                                     <action selector="steps1000BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="aAe-XZ-5KW"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="iTD-48-Bfr"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="steps1000Segue" id="iTD-48-Bfr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AGe-Wq-WpF">
@@ -92,7 +92,7 @@
                                 </state>
                                 <connections>
                                     <action selector="steps10000BtnPressed:" destination="StI-aW-Qwg" eventType="touchUpInside" id="0k8-nX-E0Z"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="z6n-RB-3KC"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="steps10000Segue" id="z6n-RB-3KC"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_5758.png" id="amF-05-r50">
@@ -150,38 +150,38 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steps out of" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gn5-LZ-Mn6">
-                                <rect key="frame" x="184" y="260" width="63" height="67"/>
+                                <rect key="frame" x="187" y="386" width="63" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="duy-kI-xB2">
-                                <rect key="frame" x="52" y="239.5" width="217" height="35.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.69019607839999997" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c2T-qN-0Xa">
-                                <rect key="frame" x="189" y="312" width="53" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gdf-9K-0iL">
-                                <rect key="frame" x="131" y="411" width="128" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c2T-qN-0Xa">
+                                <rect key="frame" x="134" y="445" width="53" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dzw-9b-XP7">
-                                <rect key="frame" x="150" y="373" width="131" height="21"/>
+                                <rect key="frame" x="153" y="474" width="131" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M7U-Gi-HgN">
+                                <rect key="frame" x="141" y="250" width="155" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.035996730130000001" green="0.43917692549999998" blue="0.19075430139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lel-IL-K0j">
+                                <rect key="frame" x="153" y="503" width="131" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.20235402960526316" blue="0.10490337171052631" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -192,8 +192,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="stepCountGoal" destination="c2T-qN-0Xa" id="wmL-u0-d4p"/>
-                        <outlet property="stepCountProgress" destination="duy-kI-xB2" id="V7x-dO-KnM"/>
-                        <outlet property="stepCountRemaining" destination="Gdf-9K-0iL" id="yf2-B7-JTM"/>
+                        <outlet property="stepCountProgress" destination="M7U-Gi-HgN" id="eEc-vm-hg3"/>
+                        <outlet property="stepCountRemaining" destination="Lel-IL-K0j" id="VKQ-zY-54p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

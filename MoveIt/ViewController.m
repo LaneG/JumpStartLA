@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *stepCountGoal;
 @property (weak, nonatomic) IBOutlet UILabel *stepCountProgress;
 @property (weak, nonatomic) IBOutlet UILabel *stepCountRemaining;
-@property (nonatomic) NSInteger stepCount;
 
 @end
 
@@ -96,7 +95,6 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
      ];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.stepCount = 2000;
     self.stepCountGoal.text = [NSString stringWithFormat:@"%ld", (long)self.stepCount];
     
     CGRect frame = self.view.bounds;
