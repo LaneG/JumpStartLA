@@ -149,15 +149,15 @@
 				D1A79AED1AA2847900DEFBB3 /* Main.storyboard */,
 				D1BB38EE1AA304F0009548AC /* MoveIt.entitlements */,
 				D1A79AE71AA2847900DEFBB3 /* MoveIt.xcdatamodeld */,
+				D1EF766C1AA3E6AE0016A1B9 /* NetflixViewController.h */,
+				D1EF766D1AA3E6AE0016A1B9 /* NetflixViewController.m */,
 				6F92CFB61AA3D41A00DA6F2C /* RewardController.h */,
 				6F92CFB51AA3D41A00DA6F2C /* RewardController.m */,
+				D1EF766F1AA3E88F0016A1B9 /* SetGoalViewController.h */,
+				D1EF76701AA3E88F0016A1B9 /* SetGoalViewController.m */,
 				D1A79AE01AA2847900DEFBB3 /* Supporting Files */,
 				D1A79AEA1AA2847900DEFBB3 /* ViewController.h */,
 				D1A79AEB1AA2847900DEFBB3 /* ViewController.m */,
-				D1EF766C1AA3E6AE0016A1B9 /* NetflixViewController.h */,
-				D1EF766D1AA3E6AE0016A1B9 /* NetflixViewController.m */,
-				D1EF766F1AA3E88F0016A1B9 /* SetGoalViewController.h */,
-				D1EF76701AA3E88F0016A1B9 /* SetGoalViewController.m */,
 			);
 			path = MoveIt;
 			sourceTree = "<group>";
