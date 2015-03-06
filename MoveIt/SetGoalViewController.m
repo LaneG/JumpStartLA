@@ -19,17 +19,17 @@ static NSString * const BaseURLString = @"http://54229587.ngrok.com/";
 
 - (IBAction)steps100BtnPressed:(id)sender
 {
-    [self killNetflix];
+//    [self killNetflix];
 }
 
 - (IBAction)steps1000BtnPressed:(id)sender
 {
-    [self killNetflix];
+//    [self killNetflix];
 }
 
 - (IBAction)steps10000BtnPressed:(id)sender
 {
-    [self killNetflix];
+//    [self killNetflix];
 }
 
 - (void)killNetflix

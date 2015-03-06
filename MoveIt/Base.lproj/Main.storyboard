@@ -240,7 +240,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testPOSTBtnPressed:" destination="jNJ-Wq-hjz" eventType="touchUpInside" id="Hbn-9F-Uk5"/>
                                     <segue destination="5uc-32-HAt" kind="push" id="G1v-sj-1Jh"/>
                                 </connections>
                             </button>
